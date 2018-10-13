@@ -5,5 +5,5 @@
     * mongod.exe --dbpath="your db path"
     * node server/server.js
 
-- [] Add authentication
-- [] Users routes
+- [ ] Add authentication
+- [ ] Users routes
