@@ -1,14 +1,19 @@
 const mongoose = require('../db/mongoose')
+const validator = require('validator')
 
-var User = mongoose.model('User', {
-    name: {
+const UserSchema = new mongoose.Schema({
+    email: {
         type: String,
-        required: true
+        required: true,
+        validate: validator.isEmail
     },
     password: {
         type: String,
-        required: true
+        required: true,
+        minlength: 6
     }
 })
+
+var User = mongoose.model('User', UserSchema)
 
 module.exports = User
